@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'Olá EJCM!!!';
+});
+
+Route::get('servicos',function(){
+	return "O serviço do Fulano e muito bom.<br><br>
+	Gostou?<a href='".url('contato')."'> Esse é o contato dele.</a>";
+});
+
+Route::get('servicos/{id}', function ($id) { 
+	return "O serviço do ".$id." é muito bom.";
 });
