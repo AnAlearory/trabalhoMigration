@@ -39,7 +39,7 @@ class ClientesController extends Controller
 	}
 
 	public function delete($id){
-		Cliente::destroy($id);
+		Livros::destroy($id);
 		return response()->json(['DELETADO']);
 	}
 }

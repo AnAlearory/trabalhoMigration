@@ -19,8 +19,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/clientes', 'ClientesController@create');
 
-Route::get('/clientes', 'ClientesController@list');
+Route::get('/getClientes', 'ClientesController@list');
 
-Route::put('/clientes/{id}', 'ClientesController@update');
+Route::put('/putClientes/{id}', 'ClientesController@update');
 
-Route::delete('/clientes/{id}', 'ClientesController@delete');
+Route::delete('/delClientes/{id}', 'ClientesController@delete');
+
+Route::post('/livros', 'LivrosController@create');
+
+Route::get('/getLivros', 'LivrosController@list');
+
+Route::put('/putLivros/{id}', 'LivrosController@update');
+
+Route::delete('/delLivros/{id}', 'LivrosController@delete');
