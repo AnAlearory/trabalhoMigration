@@ -17,6 +17,12 @@ class ClientesController extends Controller
     $cliente->save();
     return response()->json([$cliente]);
 	}
+
+	public function show($id){
+		$cliente = Cliente::findOrFail($id);
+		return response()->json([$cliente]);
+	}
+
 	public function list(){
 		return Cliente::all();
 	}

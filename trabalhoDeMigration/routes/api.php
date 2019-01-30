@@ -17,18 +17,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/clientes', 'ClientesController@create');
+Route::post('/clientes', 'ClientesController@create')->name('criar_clientes');
 
-Route::get('/getClientes', 'ClientesController@list');
+Route::get('/clientes', 'ClientesController@list')->name('mostrar_clientes');
 
-Route::put('/putClientes/{id}', 'ClientesController@update');
+Route::put('/clientes/{id}', 'ClientesController@update')->name('atualizar_clientes');
 
-Route::delete('/delClientes/{id}', 'ClientesController@delete');
+Route::delete('/clientes/{id}', 'ClientesController@delete')->name('deletar_clientes');
 
-Route::post('/livros', 'LivrosController@create');
+Route::post('/livros', 'LivrosController@create')->name('criar_livros');
 
-Route::get('/getLivros', 'LivrosController@list');
+Route::get('/livros', 'LivrosController@list')->name('mostrar_livros');
 
-Route::put('/putLivros/{id}', 'LivrosController@update');
+Route::put('/livros/{id}', 'LivrosController@update')->name('atualizar_livros');
 
-Route::delete('/delLivros/{id}', 'LivrosController@delete');
+Route::delete('/livros/{id}', 'LivrosController@delete')->name('deletar_livros');
+
+Route::apiResource('/emprestimo', 'EmprestimoController');

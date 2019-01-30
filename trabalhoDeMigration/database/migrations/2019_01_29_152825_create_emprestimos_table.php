@@ -17,7 +17,7 @@ class CreateEmprestimosTable extends Migration
             $table->increments('id');
             $table->string('status');
             $table->string('dataDeInicio');
-            $table->string('dataTermino');
+            $table->string('dataDeTermino');
             $table->integer('cliente_id')->unsigned()->nullable();
             $table->integer('livro_id')->unsigned()->nullable();
             $table->timestamps();
